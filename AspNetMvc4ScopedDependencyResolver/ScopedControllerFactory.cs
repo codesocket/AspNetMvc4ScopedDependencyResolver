@@ -33,7 +33,7 @@ namespace AspNetMvc4ScopedDependencyResolver
             childContainer.Dispose();
         }
 
-        private IDictionary<IController, IUnityContainer> controllerToContainerMap;
-        private IUnityContainer container;
+        private readonly IDictionary<IController, IUnityContainer> controllerToContainerMap;
+        private readonly IUnityContainer container;
     }
 }
