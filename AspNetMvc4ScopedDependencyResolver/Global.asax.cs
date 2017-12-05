@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AspNetMvc4ScopedDependencyResolver.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +19,7 @@ namespace AspNetMvc4ScopedDependencyResolver
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            ControllerBuilder.Current.SetControllerFactory(new ScopedControllerFactory(UnityConfig.GetConfiguredContainer()));
         }
     }
 }
