@@ -37,7 +37,9 @@ namespace AspNetMvc4ScopedDependencyResolver.App_Start
             // container.LoadConfiguration();
 
             // TODO: Register your types here
-            container.RegisterType<IProductService, ProductService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IDbContext, DbContext>(new HierarchicalLifetimeManager());
+            container.RegisterType<IProductService, ProductService>();
+            container.RegisterType<IOrderService, OrderService>();
         }
     }
 }

@@ -5,14 +5,13 @@ using System.Web;
 
 namespace AspNetMvc4ScopedDependencyResolver.Services
 {
-    public interface IProductService
+    public interface IOrderService
     {
-
     }
 
-    public class ProductService : IProductService
+    public class OrderService : IOrderService
     {
-        public ProductService(IDbContext context)
+        public OrderService(IDbContext context)
         {
 
         }

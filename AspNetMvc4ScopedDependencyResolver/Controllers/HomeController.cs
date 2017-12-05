@@ -9,9 +9,10 @@ namespace AspNetMvc4ScopedDependencyResolver.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController(IProductService service)
+        public HomeController(IProductService service, IOrderService orderService)
         {
-            this.service = service;
+            this.productService = service;
+            this.orderService = orderService;
         }
 
         public ActionResult Index()
@@ -21,6 +22,7 @@ namespace AspNetMvc4ScopedDependencyResolver.Controllers
             return View();
         }
 
-        private readonly IProductService service;
+        private readonly IProductService productService;
+        private readonly IOrderService orderService;
     }
 }
